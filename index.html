@@ -18,7 +18,7 @@ async function postData(url = '', data = {}) {
   return response.json(); // parses JSON response into native JavaScript objects
 }
 
-postData('http://kasboard-mainnet.daglabs-dev.com/api/tsdb/query', {"from":"1638679373541","to":"1638697605880","queries":[{"refId":"A","intervalMs":60000,"maxDataPoints":1212,"datasourceId":1,"rawSql":"SELECT\n  \"timestamp\" AS \"time\",\n  hashrate\nFROM blocks\nWHERE $__unixEpochFilter(\"timestamp\" / 1000)\nORDER BY 1","format":"time_series"}]})
+postData('https://kasboard-mainnet.daglabs-dev.com/api/tsdb/query', {"from":"1638679373541","to":"1638697605880","queries":[{"refId":"A","intervalMs":60000,"maxDataPoints":1212,"datasourceId":1,"rawSql":"SELECT\n  \"timestamp\" AS \"time\",\n  hashrate\nFROM blocks\nWHERE $__unixEpochFilter(\"timestamp\" / 1000)\nORDER BY 1","format":"time_series"}]})
   .then(data => {
     console.log(data); // JSON data parsed by `data.json()` call
   });
